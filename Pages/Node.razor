@@ -3,7 +3,6 @@
     public Boolean IsMouseDown { get; set; }
 
     Boolean IsActive;
-    private String ActiveStyle = "background-color: #34495e;";
 
     private void ToggleIsActive()
     {
@@ -14,8 +13,7 @@
 
 <td width="25px"
     height="25px"
-    style="@(IsActive ? ActiveStyle : String.Empty) user-select:none; font-size: 8px"
+    class="@(IsActive ? "node wall" : String.Empty)"
     @onmouseover="ToggleIsActive"
     @onmousedown="@(() => IsActive = !IsActive)">
 </td>
-
